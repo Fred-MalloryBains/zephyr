@@ -11,7 +11,3 @@
         opt-pause-halted-by-dbg;
     };
 };
-
-&wdt31 {
-	status = "okay";
-};
