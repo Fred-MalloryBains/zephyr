@@ -13,3 +13,17 @@ properties:
 
   interrupts:
     required: true
+
+  opt_pause_in_sleep:
+   type: boolean
+   description: |
+      If true, the watchdog timer will be paused when the CPU is in sleep mode.
+      This is useful to prevent the watchdog from triggering during low-power
+      states.
+  
+  opt_pause_halted_by_dbg:
+    type: boolean
+    description: |
+      If true, the watchdog timer will be paused when the CPU is halted by a
+      debugger. This allows the watchdog to be used during debugging without
+      triggering a reset.
