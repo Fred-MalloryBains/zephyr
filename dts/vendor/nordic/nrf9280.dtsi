@@ -188,6 +188,8 @@
 			cpuapp_wdt010: watchdog@14000 {
 				compatible = "nordic,nrf-wdt";
 				reg = <0x14000 0x1000>;
+				opt-pause-in-sleep;
+				opt-pause-halted-by-dbg;
 				status = "disabled";
 				interrupts = <20 NRF_DEFAULT_IRQ_PRIORITY>;
 			};
@@ -195,6 +197,8 @@
 			cpuapp_wdt011: watchdog@15000 {
 				compatible = "nordic,nrf-wdt";
 				reg = <0x15000 0x1000>;
+				opt-pause-in-sleep;
+				opt-pause-halted-by-dbg;
 				status = "disabled";
 				interrupts = <21 NRF_DEFAULT_IRQ_PRIORITY>;
 			};

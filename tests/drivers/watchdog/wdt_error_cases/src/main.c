@@ -42,8 +42,8 @@
 #define DEFAULT_WINDOW_MIN (0U)
 
 /* Align tests to the specific target: */
-#if DT_PROP(DT_NODELABEL(WDT_NODE), opt_pause_in_sleep) && \
-	DT_PROP(DT_NODELABEL(WDT_NODE), opt_pause_halted_by_dbg)
+#if (DT_PROP(WDT_NODE, opt_pause_in_sleep) && \
+	DT_PROP(WDT_NODE, opt_pause_halted_by_dbg))  
 #define WDT_TEST_FLAGS                                                                             \
 	(WDT_DISABLE_SUPPORTED | WDT_FLAG_RESET_SOC_SUPPORTED |                                    \
 	 WDT_FLAG_ONLY_ONE_TIMEOUT_VALUE_SUPPORTED | WDT_OPT_PAUSE_IN_SLEEP_SUPPORTED |            \
@@ -384,7 +384,7 @@ ZTEST(wdt_coverage, test_05_wdt_install_timeout_after_wdt_setup)
 ZTEST(wdt_coverage, test_06a_wdt_setup_WDT_OPT_PAUSE_IN_SLEEP_not_supported)
 {
 	int ret;
-
+	
 	if (WDT_TEST_FLAGS & WDT_OPT_PAUSE_IN_SLEEP_SUPPORTED) {
 		/* Skip this test because WDT_OPT_PAUSE_IN_SLEEP is supported. */
 		ztest_test_skip();

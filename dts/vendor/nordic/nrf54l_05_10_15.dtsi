@@ -691,6 +691,8 @@
 				compatible = "nordic,nrf-wdt";
 				reg = <0x109000 0x620>;
 				interrupts = <265 NRF_DEFAULT_IRQ_PRIORITY>;
+				opt-pause-in-sleep;
+				opt-pause-halted-by-dbg;
 				status = "disabled";
 			};
 
